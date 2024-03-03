@@ -26,7 +26,8 @@ https://www.techtarget.com/whatis/definition/monolithic-architecture
 Cons – What becomes more difficult?
 1.    Increased maintenance cost as the system becomes more complicated compared to monolithic architecture. 
 2.    There may be a chance of failure during communication between different services. 
-3.    Adding more services can be painful as they require multiple databases and transactions. 
+3.    Adding more services can be painful as they require multiple databases and transactions.
+  
 https://microservices.io/patterns/microservices.html
 
 ## Sample code
