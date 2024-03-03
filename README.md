@@ -1,26 +1,32 @@
-Title: Microservices Architecture for Budget Management Application
+Title: Adopting Microservices Architecture to the Hotel booking system 
 
 ## Context
 
-Our company is developing a budget management application to help individuals and businesses track their finances. This application is expected to handle a large volume of users and transactions. We need a scalable and maintainable architecture to support the growing demands of our user base and to enable easy development and deployment of new features.
+The hotel booking system was previously built as a monolithic architecture. All functionalities, such as user authentication, room booking, payment processing, and inventory management are tightly coupled within a single codebase. This architecture simplifies development and deployment initially but becomes increasingly complex and difficult to maintain over time as the system grows. To enhance the user experience and provide end-to-end solutions, a new microservice architecture implementation is introduced.
 
 ## Decision
 
-We will design the budget management application using a microservices architecture. Each functional component of the application will be implemented as a separate microservice, responsible for a specific aspect of the budget management process, such as user authentication, transaction tracking, budget planning, and reporting.
+We have decided to transition from monolithic architecture to microservices architecture of the system.
 
 ## Rationale
 
-A microservices architecture offers several advantages for our budget management application:
-    Scalability: Microservices allow us to scale individual components independently based on demand. This flexibility is crucial for handling varying workloads efficiently,     especially during peak usage periods.
-    Flexibility: With microservices, different teams can use the most appropriate technologies and programming languages for each service. This enables us to leverage the strengths of various tools and frameworks, optimizing development and maintenance efforts.
-    Maintainability: By decoupling components into separate services, we can make changes, updates, and bug fixes to one service without affecting others. This modular approach simplifies maintenance and reduces the risk of unintended side effects.
-    Resilience: In a microservices architecture, failure in one service does not necessarily bring down the entire system. Other services can continue to function independently, ensuring uninterrupted service availability for users.
+Why do we choose this solution?
+Hotel booking systems initially use the monolithic architecture design which is the traditional design architecture for a small software application with a small number of users. Using monolithic architecture seemed to be convenient at first as the system was not yet used by many users. As the number of users has increased, our booking system is experiencing high traffic during the seasonal holidays. Many users are facing the problem of not being able to make a reservation. Besides, the software system will be adding additional services, so microservices would be more suitable for this situation. 
+
 
 ## Consequences
 
-    Complexity: Managing a distributed system introduces additional complexity in terms of deployment, monitoring, and coordination between services. We need to invest in robust DevOps practices and tooling to effectively manage this complexity.
-    Communication Overhead: Inter-service communication introduces latency and network overhead, which must be carefully managed to ensure acceptable performance. We'll employ lightweight communication protocols like gRPC or RESTful APIs and implement efficient service discovery mechanisms to minimize overhead.
-    Data Consistency: Ensuring data consistency and transactional integrity across multiple microservices requires careful design and implementation of distributed transactions or eventual consistency mechanisms. We'll adopt patterns like Saga or CQRS to maintain consistency while preserving scalability and performance.
+Pros – What becomes easier? 
+1.    In monolith applications, if one program or service needs to be updated, other parts of the program are required to be recompiled and retested. This might be a difficulty when a new service is added to the system. 
+2.    As microservices communicate with each other via RESTful APIs. And as long as a microservice exchanges information via this communication pattern, how it is implemented under the covers is of no concern to its consumers 
+3.    Microservices allow for scaling individual components of a system independently based on demand. During peak traffic times, specific microservices handling critical functions can be scaled up to accommodate the increased load, thereby distributing the traffic load more effectively and reducing the likelihood of website jams.
+https://www.techtarget.com/whatis/definition/monolithic-architecture
+
+Cons – What becomes more difficult?
+1.    Increased maintenance cost as the system becomes more complicated compared to monolithic architecture. 
+2.    There may be a chance of failure during communication between different services. 
+3.    Adding more services can be painful as they require multiple databases and transactions. 
+https://microservices.io/patterns/microservices.html
 
 ## Sample code
 
