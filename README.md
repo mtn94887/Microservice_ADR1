@@ -1,4 +1,4 @@
-Title: Adopting Microservices Architecture to the Hotel booking system 
+# Title: Adopting Microservices Architecture to the Hotel booking system 
 
 ## Context
 
@@ -20,15 +20,12 @@ Pros – What becomes easier?
 1.    In monolith applications, if one program or service needs to be updated, other parts of the program are required to be recompiled and retested. This might be a difficulty when a new service is added to the system. 
 2.    As microservices communicate with each other via RESTful APIs. And as long as a microservice exchanges information via this communication pattern, how it is implemented under the covers is of no concern to its consumers 
 3.    Microservices allow for scaling individual components of a system independently based on demand. During peak traffic times, specific microservices handling critical functions can be scaled up to accommodate the increased load, thereby distributing the traffic load more effectively and reducing the likelihood of website jams.
-  
-https://www.techtarget.com/whatis/definition/monolithic-architecture
 
 Cons – What becomes more difficult?
 1.    Increased maintenance cost as the system becomes more complicated compared to monolithic architecture. 
 2.    There may be a chance of failure during communication between different services. 
 3.    Adding more services can be painful as they require multiple databases and transactions.
-  
-https://microservices.io/patterns/microservices.html
+
 
 ## Sample code
 
